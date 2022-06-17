@@ -1,5 +1,4 @@
 
-setwd('C:\\Users\\Weber\\Desktop\\大學\\政大110下\\R\\HW5')
 reviews <- read.csv("Womens Clothing E-Commerce Reviews.csv", encoding = "UTF-8")
 #str(reviews)
 #reviews$Review.Text
