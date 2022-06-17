@@ -1,6 +1,5 @@
 install.packages("tidyverse")
 library(tidyverse)
-setwd('C:\\Users\\Weber\\Desktop\\¤j¾Ç\\¬F¤j110¤U\\R\\HW1')
 product_list <- read.csv("product_list.csv")
 salesdata <- read.csv("salesdata.csv")
 client_list <- read.csv("client_list.csv")
