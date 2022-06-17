@@ -1,6 +1,5 @@
 #######################
 # dimension reduction #
-setwd('C:\\Users\\Weber\\Desktop\\大學\\政大110下\\R\\HW4')
 finan <- read.csv("financialdata.csv")
 data = finan[,-1]
 
