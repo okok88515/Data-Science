@@ -38,13 +38,13 @@ attach(houseprice)
 
 require(ggplot2)
 
-#Æ[¹î©Ğ«¬ªº½c«¬¹Ï
+#è§€å¯Ÿæˆ¿å‹çš„ç®±å‹åœ–
 ggplot(data = houseprice) + geom_boxplot(aes( x= Type, y= Sale_amount, colour = Type)) + 
   labs( x = 'Type',
         y = 'Sales_amount',
         title = 'Sales Distribution by Type')
 
-#µo²{¤@­Ó©úÅãªºÂ÷¸s­È¡A±N¨ä§R°£
+#ç™¼ç¾ä¸€å€‹æ˜é¡¯çš„é›¢ç¾¤å€¼ï¼Œå°‡å…¶åˆªé™¤
 houseprice <- houseprice %>% filter(Sale_amount < 7500000)
 attach(houseprice)
 
@@ -53,7 +53,7 @@ ggplot(data = houseprice) + geom_boxplot(aes( x= Type, y= Sale_amount, colour = 
         y = 'Sales_amount',
         title = 'Sales Distribution by Type')
 
-#±N«°¥«¨Ì·Ó¦è°Ï¡B¤¤³¡¡BªF°Ï°µ¤ÀÃş
+#å°‡åŸå¸‚ä¾ç…§è¥¿å€ã€ä¸­éƒ¨ã€æ±å€åšåˆ†é¡
 Town_type <- ifelse (houseprice$Town %in% c("Tacoma, WA","Corvallis, OR","Eugene, OR","San Luis Obispo, CA",
                                             "Claremont, CA","Berkeley, CA","Logan, UT","Bozeman, MT",
                                             "Flagstaff, AZ","Tempe, AZ") , "west", 
@@ -66,20 +66,20 @@ Town_type <- ifelse (houseprice$Town %in% c("Tacoma, WA","Corvallis, OR","Eugene
 print(Town_type)
 houseprice$Town_type <- c(Town_type)
 
-#Æ[¹î©Ğ¤l¦a°Ïªº½c«¬¹Ï
+#è§€å¯Ÿæˆ¿å­åœ°å€çš„ç®±å‹åœ–
 ggplot(data = houseprice) + geom_boxplot(aes( x= Town_type, y= Sale_amount, colour = Town_type)) + 
   labs( x = 'Town_type',
         y = 'Sales_amount',
         title = 'Sales Distribution by Town_type')
 
 
-#Æ[¹î©Ğ¤l¦~¥÷ªº½c«¬¹Ï
+#è§€å¯Ÿæˆ¿å­å¹´ä»½çš„ç®±å‹åœ–
 ggplot(data = houseprice) + geom_boxplot(aes( x= year_type, y= Sale_amount, colour = year_type)) + 
   labs( x = 'year_type',
         y = 'Sales_amount',
         title = 'Sales Distribution by year_type')
 
-#±NTypeÂà¬°dummy variables¡A¨Ã¸ÕµÛ°µ°jÂk¤ÀªR
+#å°‡Typeè½‰ç‚ºdummy variablesï¼Œä¸¦è©¦è‘—åšè¿´æ­¸åˆ†æ
 library(dummies)
 
 houseprice$Type = as.factor(as.character(houseprice$Type))
@@ -89,7 +89,7 @@ type_dummies <- type_dummies[,-c(3)]
 fit.1 = lm(Sale_amount~.,data = type_dummies)
 summary(fit.1)
 
-#±NTownÂà¬°dummy variables¡A¨Ã¸ÕµÛ°µ°jÂk¤ÀªR
+#å°‡Townè½‰ç‚ºdummy variablesï¼Œä¸¦è©¦è‘—åšè¿´æ­¸åˆ†æ
 houseprice$Town_type = as.factor(as.character(houseprice$Town_type))
 town_df <- data.frame(Type = houseprice$Town_type)
 town_dummies <- dummy.data.frame(town_df)
@@ -97,7 +97,7 @@ town_dummies <- town_dummies[,-c(3)]
 fit.2 = lm(Sale_amount~.,data = town_dummies)
 summary(fit.2)
 
-##±Nyear_typeÂà¬°dummy variables¡A¨Ã¸ÕµÛ°µ°jÂk¤ÀªR
+##å°‡year_typeè½‰ç‚ºdummy variablesï¼Œä¸¦è©¦è‘—åšè¿´æ­¸åˆ†æ
 houseprice$year_type = as.factor(as.character(houseprice$year_type))
 year_df <- data.frame(Type = houseprice$year_type)
 year_dummies <- dummy.data.frame(year_df)
@@ -105,12 +105,12 @@ year_dummies <- year_dummies[,-c(3)]
 fit.3 = lm(Sale_amount~.,data = year_dummies)
 summary(fit.3)
 
-#±Ndummy variables¦X¨Ö¨ì­ì¥»ªºhousepriceªí¤¤
+#å°‡dummy variablesåˆä½µåˆ°åŸæœ¬çš„housepriceè¡¨ä¸­
 houseprice_final <- cbind(houseprice, type_dummies, town_dummies, year_dummies)
 houseprice_final <- houseprice_final[-c(1, 3, 8:13)]
 attach(houseprice_final)
 
-#Æ[¹î³sÄò«¬xÅÜ¼Æ¤§¶¡ªºÃö«Y¡A¥H¤Î³sÄò«¬x¹ïyÅÜ¼Æªº¬ÛÃö©Ê
+#è§€å¯Ÿé€£çºŒå‹xè®Šæ•¸ä¹‹é–“çš„é—œä¿‚ï¼Œä»¥åŠé€£çºŒå‹xå°yè®Šæ•¸çš„ç›¸é—œæ€§
 
 pairs(houseprice_final[,c(1:5)])
 
@@ -118,11 +118,11 @@ library(corrplot)
 cor=cor(houseprice_final[,c(1:5)])
 cor
 
-#±NSqft_lotÅÜ¼Æ§R°£
+#å°‡Sqft_lotè®Šæ•¸åˆªé™¤
 houseprice_final <- houseprice_final[-c(5)]
 attach(houseprice_final)
 
-#±N«e8000µ§¸ê®Æ¤Á¬°°V½m¶°¡A¨ä¾l¬°´ú¸Õ¶°
+#å°‡å‰8000ç­†è³‡æ–™åˆ‡ç‚ºè¨“ç·´é›†ï¼Œå…¶é¤˜ç‚ºæ¸¬è©¦é›†
 train=houseprice_final[1:8000,]
 test=houseprice_final[8001:10658,]
 
@@ -138,38 +138,38 @@ step(null, scope=list(lower=null, upper=full), direction="forward")
 #BIC
 step(full, direction="backward", criterion = "BIC")
 
-#°µ°jÂk¤ÀªR
+#åšè¿´æ­¸åˆ†æ
 model <- lm(Sale_amount ~ Beds + Baths + Sqft_home  + 
               Typeeast + Typemiddle + Typecentennial + Typenew, data = train)
 summary(model)
 
-#¥[¤J¥æ¤¬§@¥Î¶µBeds:Sqft_home
+#åŠ å…¥äº¤äº’ä½œç”¨é …Beds:Sqft_home
 model_1 <- lm(Sale_amount ~ Beds + Baths + Sqft_home +Beds:Sqft_home + 
               Typeeast + Typemiddle + Typecentennial + Typenew, data = train)
 
 summary(model_1)
 anova(model, model_1)
 
-#¥[¤J¥æ¤¬§@¥Î¶µBeds:Baths
+#åŠ å…¥äº¤äº’ä½œç”¨é …Beds:Baths
 model_2 <- lm(Sale_amount ~ Beds + Baths + Sqft_home + Beds:Sqft_home + 
                 Beds:Baths + Typeeast + Typemiddle + Typecentennial + Typenew, data = train)
 summary(model_2)
 anova(model_1, model_2)
 
-#¥[¤J¥æ¤¬§@¥Î¶µBaths:Sqft_home
+#åŠ å…¥äº¤äº’ä½œç”¨é …Baths:Sqft_home
 model_3 <- lm(Sale_amount ~ Beds + Baths + Sqft_home + Beds:Sqft_home + 
                 Baths:Sqft_home + Typeeast + Typemiddle + Typecentennial + Typenew, data = train)
 summary(model_3)
 anova(model_1, model_3)
 
-#µo²{¦³¨âµ§Â÷¸s­È¡A±N¨ä§R°£
+#ç™¼ç¾æœ‰å…©ç­†é›¢ç¾¤å€¼ï¼Œå°‡å…¶åˆªé™¤
 c= cooks.distance(model_3) #>=1, might be outlier, can remove
 plot(c)
 which(c>1)
 houseprice_final <- houseprice_final[-c(1120,1128),]
 attach(houseprice_final)
 
-#°µAIC¡BBIC¡BRMSE´ú¸Õ
+#åšAICã€BICã€RMSEæ¸¬è©¦
 train=houseprice_final[1:8000,]
 test=houseprice_final[8001:10656,]
 AIC(model,k = 2)
