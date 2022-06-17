@@ -1,6 +1,7 @@
 library(datasets)
 library(MASS)
 library(tidyverse)
+airline_survey <- read.csv("airline_survey.csv", encoding = "UTF-8")
 head(airline_survey)
 airline_survey$satis <- as.factor(ifelse(airline_survey$satisfaction == "satisfied", 1, 0))
 airline_survey <- airline_survey[,-c(1, 2, 25)]
