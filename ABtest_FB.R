@@ -1,5 +1,5 @@
 library(tidyverse)
-setwd('C:\\Users\\Weber\\Desktop\\大學\\政大110下\\R\\HW6')
+setwd('C:\\Users\\Weber\\Desktop\\瞻j職��\\竅F瞻j110瞻U\\R\\HW6')
 fbdata <- read.csv("hw6-fb.csv", encoding = "UTF-8")
 load("abtest.Rdata")
 ## check your data1
