@@ -1,6 +1,6 @@
 #######################
 # dimension reduction #
-setwd('C:\\Users\\Weber\\Desktop\\¤j¾Ç\\¬F¤j110¤U\\R\\HW4')
+setwd('C:\\Users\\Weber\\Desktop\\å¤§å­¸\\æ”¿å¤§110ä¸‹\\R\\HW4')
 finan <- read.csv("financialdata.csv")
 data = finan[,-1]
 
@@ -65,9 +65,9 @@ scores <- as.data.frame(spca$x[,1:3])
 pve=(spca$sdev)^2 / (sum(spca$sdev^2))
 pve
 pve[1]
-# ¦w¸Ë dplyr ®M¥ó ---------
+# å®‰è£ dplyr å¥—ä»¶ ---------
 install.packages("dplyr")
-# ¦w¸Ë dplyr ®M¥ó ---------
+# å®‰è£ dplyr å¥—ä»¶ ---------
 library(dplyr)
 str(scores)
 
