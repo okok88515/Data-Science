@@ -1,6 +1,5 @@
 library(tidyverse)
-setwd('C:\\Users\\Weber\\Desktop\\¤j¾Ç\\¬F¤j110¤U\\R\\HW6')
-fbdata <- read.csv("hw6-fb.csv", encoding = "UTF-8")
+fbdata <- read.csv("fb.csv", encoding = "UTF-8")
 load("abtest.Rdata")
 ## check your data1
 str(fbdata)
