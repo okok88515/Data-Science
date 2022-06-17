@@ -34,4 +34,27 @@
 ![image](https://user-images.githubusercontent.com/71677948/174326995-627aadef-8ec8-4a91-a11e-60bfb88107db.png)
 ![image](https://user-images.githubusercontent.com/71677948/174327014-7b039478-dece-4f07-beef-70d1e8efd6e6.png)
 
+# Dimension Reduction
+![image](https://user-images.githubusercontent.com/71677948/174327220-4e0dca70-049a-4850-b0b2-a3dcef99cb55.png)
+![image](https://user-images.githubusercontent.com/71677948/174327249-c9809d89-2f87-4e99-88c0-cd6be8fc1297.png)
+![image](https://user-images.githubusercontent.com/71677948/174327279-ae732ea2-54bc-4dc4-aa5f-4a50f47caf7d.png)
+![image](https://user-images.githubusercontent.com/71677948/174327317-78bbfbc6-0021-4342-b674-8dccb5d037a1.png)
+![image](https://user-images.githubusercontent.com/71677948/174327335-d1eff0e0-6868-41f7-b70a-1f68a31a1bfe.png)
+![image](https://user-images.githubusercontent.com/71677948/174327393-6334b16e-9d5e-45f7-9f0e-c39fbc422efb.png)
+
+# Text Mining
+![image](https://user-images.githubusercontent.com/71677948/174327476-ab018c69-a2f9-4f2d-bd4d-cc4d74cc8386.png)
+![image](https://user-images.githubusercontent.com/71677948/174327529-fd39be38-e383-41b7-85cd-eb135b5b941b.png)
+![image](https://user-images.githubusercontent.com/71677948/174327585-6ab9c552-5897-4a97-8657-780e92f4b6a3.png)
+![image](https://user-images.githubusercontent.com/71677948/174327611-c3bba303-294d-4eb6-9025-bb955beba938.png)
+![image](https://user-images.githubusercontent.com/71677948/174327654-f75a5199-38a0-4c41-8003-f7bec17a8507.png)
+
+# AB Test
+![image](https://user-images.githubusercontent.com/71677948/174327759-f2187225-e592-4c4c-80f9-f4000ffc01e3.png)
+![image](https://user-images.githubusercontent.com/71677948/174327774-60fd5284-fd47-42fa-8a54-431cfbd874d5.png)
+![image](https://user-images.githubusercontent.com/71677948/174327818-83a7872c-17e5-480f-9b86-f2631b1540cb.png)
+![image](https://user-images.githubusercontent.com/71677948/174327862-b34af633-a866-4b7f-a006-ed6d455e71ac.png)
+![image](https://user-images.githubusercontent.com/71677948/174327937-a65b4dbd-b6dd-4d17-892c-c0242a90fc81.png)
+![image](https://user-images.githubusercontent.com/71677948/174327995-d8e5f8ac-8d50-42df-ba2d-56142121a517.png)
+
 
