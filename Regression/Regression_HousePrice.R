@@ -27,6 +27,7 @@ cauchy(theta, y)
 #2.a
 install.packages("tidyverse")
 library(tidyverse)
+houseprice <- read.csv("houseprice.csv", encoding = "UTF-8")
 year_type <- ifelse (houseprice$Build_year<=1899, "centennial", 
                      ifelse(houseprice$Build_year>=1960, "new", "old"))
 print(year_type)
